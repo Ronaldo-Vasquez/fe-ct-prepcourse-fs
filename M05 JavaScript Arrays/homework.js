@@ -205,12 +205,24 @@ function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   var tabla = [];
+   for (let i = 0; i < 11; i++) {
+      tabla[i] = i*6;
+   }
+   return tabla;
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var tabla = [];
+   for (let i = 0; i < array.length; i++) {
+      if (array[i] > 100) {
+         tabla.push(array[i]);  
+      }
+   }
+   return tabla;
 }
 
 /* ----------------------------------------------------------------------------------
@@ -224,8 +236,19 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
-}
+   var array = [];
 
+   for (var i = 0; i < 10; i++) {
+      num = num + 2;
+      if (num === i) {
+         return "Se interrumpió la ejecución";
+      }
+      array.push(num);
+   }
+   return array;
+   
+}
+   
 function continueStatement(num) {
    // Iterar en un bucle aumentando en 2 el número recibido hasta un límite de 10 veces.
    // Guardar cada nuevo valor en un array y retornarlo.
@@ -233,6 +256,18 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var array = [];
+
+   for (var i = 0; i < 10; i++) {
+      if (i !== 5) {
+         num = num + 2;
+         array.push(num);
+      }else{
+         continue;
+      }
+      
+   }
+   return array;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
