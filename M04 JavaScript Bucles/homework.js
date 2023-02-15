@@ -36,13 +36,13 @@ function conection(status) {
    switch(status){
       case 1: 
          return "Online";
-         break;
+
       case 2:
          return "Away";
-         break;
+
       default:
          return "Offline";
-         break;   
+   
    }
 }
 
@@ -56,18 +56,16 @@ function saludo(idioma) {
    switch (idioma) {
       case "aleman":
          return "Guten Tag!";
-         break;
       
       case "mandarin":
          return "Ni Hao!";
-         break;
 
       case "ingles":
          return "Hello!";
       
       default:
          return "Hola!"
-         break;
+
    }
 }
 
@@ -83,19 +81,15 @@ function colors(color) {
    switch (color) {
       case "blue":
             return "This is blue";
-            break;
  
       case "red":
             return "This is red";
-            break;
 
       case "green":
             return "This is green";
-            break;
 
       case "orange":
             return "This is orange";
-            break;
 
       default:
          return "Color not found";
@@ -168,7 +162,7 @@ function operadoresLogicos(num1, num2, num3) {
       return "Numero 1 es mayor y positivo";
    } else if(num1<0 || num2<0 || num3<0){
       return "Hay negativos";
-   }else if (num3>num2 && num3>num2 ) {
+   }else if (num3>num2 && num3>num1 ) {
       num3++;
       return num3;
    }else if (num1===0 && num2 ===0 && num3===0) {
@@ -212,11 +206,21 @@ function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
+   
    if ((num/2 >= 50) && (num/2 <=500)) {
       return true;
    } else {
       return false;
    }
+   
+/* otra forma
+   var numStr = num.toString().length;
+   if (numStr === 3) {
+      return true;
+   } else {
+      return false;
+   }
+*/
 }
 
 function doWhile(num) {
