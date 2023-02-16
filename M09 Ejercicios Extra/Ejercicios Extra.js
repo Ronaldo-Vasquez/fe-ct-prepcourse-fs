@@ -6,6 +6,10 @@ function deObjetoAarray(objeto) {
    // Estos elementos debe ser cada par clave:valor del objeto recibido.
    // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
    // Tu código:
+  
+   arrPadre = Object.entries(objeto);
+   return arrPadre;
+
 }
 
 function numberOfCharacters(string) {
@@ -14,7 +18,73 @@ function numberOfCharacters(string) {
    // Las letras deben estar en orden alfabético.
    // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
    // Tu código:
-}
+
+   var values = string.split("").sort();//creo un arreglo de los caracteres oredenado a-z
+   var propidades = arregloPropidades(values);
+   var valoresPropiedades = arreglosValoresNoRepetidos(values);
+   
+   function crearObjetoX(props, valoresPropiedades) {
+      var objeto = {};
+      for (let i = 0; i < props.length; i++) {
+         objeto[props] = valoresPropiedades;
+      }
+      console.log(objeto);
+      return objeto;
+   }
+
+
+   function arregloPropidades(values) {
+      var totalRepeticiones = [];
+      var repetida = 0;
+      for(i=0; i<values.length; i++){
+         for(j=i+1 ;j<values.length; j++){
+            
+            if (values[i] === values[j]) {
+               repetida++;
+            }
+         }
+         
+         if(totalRepeticiones[i] != 0){
+            totalRepeticiones.push(repetida);
+         }
+         repetida = 0;
+      }
+      console.log("Propiedades "+totalRepeticiones);
+      return totalRepeticiones;
+   }
+
+
+   function arreglosValoresNoRepetidos(values) {
+      var newArrNoR = [];
+      var repetida = false;
+      for(i=0; i<values.length; i++){
+
+         for(j=i+1 ;j<values.length; j++){
+            
+            if (values[i] === values[j]) {
+               repetida = true;
+               if (newArrNoR[i]== undefined || newArrNoR[i]== null||newArrNoR[i]==0) {
+                  newArrNoR[i] = values[i];
+               }
+            }
+
+            if (repetida === false) {
+               newArrNoR[i] = values[i];
+            }
+         }
+         repetida = false;
+      }
+      console.log("Valores de propiedades"+newArrNoR);
+      return newArrNoR;
+   }
+      
+      
+      return crearObjetoX(valoresPropiedades, propidades);
+   }
+   
+   
+
+
 
 function capToFront(string) {
    // Recibes un string con algunas letras en mayúscula y otras en minúscula.
