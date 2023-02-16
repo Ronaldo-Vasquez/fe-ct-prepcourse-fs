@@ -26,60 +26,36 @@ function numberOfCharacters(string) {
    function crearObjetoX(props, valoresPropiedades) {
       var objeto = {};
       for (let i = 0; i < props.length; i++) {
-         objeto[props] = valoresPropiedades;
+         objeto[props[i]] = valoresPropiedades[i];
       }
       console.log(objeto);
       return objeto;
    }
 
-
-   function arregloPropidades(values) {
-      var totalRepeticiones = [];
-      var repetida = 0;
-      for(i=0; i<values.length; i++){
-         for(j=i+1 ;j<values.length; j++){
-            
-            if (values[i] === values[j]) {
-               repetida++;
-            }
-         }
-         
-         if(totalRepeticiones[i] != 0){
-            totalRepeticiones.push(repetida);
-         }
-         repetida = 0;
-      }
-      console.log("Propiedades "+totalRepeticiones);
-      return totalRepeticiones;
+   function arregloPropidades(arreglo) {
+      var propiedades = arreglo.filter((x, i) => arreglo.indexOf(x) === i);
+      console.log(propiedades);
+      return propiedades;
    }
 
-
-   function arreglosValoresNoRepetidos(values) {
-      var newArrNoR = [];
-      var repetida = false;
-      for(i=0; i<values.length; i++){
-
-         for(j=i+1 ;j<values.length; j++){
-            
-            if (values[i] === values[j]) {
-               repetida = true;
-               if (newArrNoR[i]== undefined || newArrNoR[i]== null||newArrNoR[i]==0) {
-                  newArrNoR[i] = values[i];
-               }
-            }
-
-            if (repetida === false) {
-               newArrNoR[i] = values[i];
+   function arreglosValoresNoRepetidos(arreglo) {
+      var valoresNoRep = [];
+      var repeticiones = 0;
+      for(i=0; i<arreglo.length; i++){
+         for(j=i; j<arreglo.length; j++){
+            if (arreglo[i]===arreglo[j]) {
+               repeticiones++;
             }
          }
-         repetida = false;
+         valoresNoRep.push(repeticiones);
+         repeticiones = 0;
       }
-      console.log("Valores de propiedades"+newArrNoR);
-      return newArrNoR;
+      console.log(valoresNoRep);
+      return valoresNoRep;
    }
       
       
-      return crearObjetoX(valoresPropiedades, propidades);
+      return crearObjetoX(propidades, valoresPropiedades);
    }
    
    
