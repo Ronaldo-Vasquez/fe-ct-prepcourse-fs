@@ -95,28 +95,26 @@ function asAmirror(frase) {
    var frasePInversas = [];
    arrPalabras = frase.split(" ");
 
-   function invertir(value){
-      console.log(value+" Valor entrada");
-      
+   function invertir(value){//recive un arreglo de palabras
       valorIs = [];
       valorIu = [];
-      
-
+   
       valorIs = value.split(" ");
       console.log(valorIs+"valor separado");
 
-      valorIu = valorIs.reverse();
-      console.log(valorIu+" valor reverso");
+      var palabraInv = [];
+      var invPalabra = [];
 
-      return valorIu.join("");
+      for(i=0; i<valorIs.length; i++){//inverte cada palabra
+         palabraInv = valorIs[i].split("");
+         invPalabra = palabraInv.reverse();
+         palabraInv = invPalabra.join("");
+         valorIu[i] = palabraInv;
+      }
+      return valorIu.join(" ");
    }
    
-
    frasePInversas = invertir(arrPalabras.join(" "));
-
-   
-   console.log(arrPalabras);
-   console.log(frasePInversas);
    return(frasePInversas)
 }
 
