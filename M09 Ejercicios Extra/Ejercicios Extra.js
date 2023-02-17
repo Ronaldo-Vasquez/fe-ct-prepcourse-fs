@@ -42,20 +42,24 @@ function numberOfCharacters(string) {
       var valoresNoRep = [];
       var repeticiones = 0;
       for(i=0; i<arreglo.length; i++){
+         
          for(j=i; j<arreglo.length; j++){
-            if (arreglo[i]===arreglo[j]) {
+               
+            if (arreglo[i] === arreglo[j]) {
                repeticiones++;
-            }
+            }    
          }
+         i = i + repeticiones - 1;
          valoresNoRep.push(repeticiones);
          repeticiones = 0;
+         console.log(valoresNoRep);
+         
       }
       console.log(valoresNoRep);
       return valoresNoRep;
    }
       
-      
-      return crearObjetoX(propidades, valoresPropiedades);
+   return crearObjetoX(propidades, valoresPropiedades);
    }
    
    
