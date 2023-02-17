@@ -100,7 +100,6 @@ function asAmirror(frase) {
       valorIu = [];
    
       valorIs = value.split(" ");
-      console.log(valorIs+"valor separado");
 
       var palabraInv = [];
       var invPalabra = [];
@@ -122,6 +121,29 @@ function capicua(numero) {
    // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
    // Caso contrario: "No es capicua".
    // Tu código:
+   var numToStr = [];
+   var strToArray =[];
+   var esCapicula = false;
+   var comparacion_1 = [];
+   var comparacion_2 = [];
+   var comp_1;
+   var comp_2;
+
+   numToStr = numero.toString();
+   strToArray = numToStr.split("");
+
+   comparacion_1 = strToArray;//no se porque pero toca crear una variable extra porque al inversir se sobre escriben las variables.
+   comp_1 = comparacion_1.join("");
+
+   comparacion_2 = strToArray.reverse();//misma razon que la anterior.
+   comp_2 = comparacion_2.join("");
+
+   if(comp_1 === comp_2){
+      esCapicula = true;
+      return "Es capicua";
+   }else{
+      return "No es capicua";
+   }
 }
 
 function deleteAbc(string) {
