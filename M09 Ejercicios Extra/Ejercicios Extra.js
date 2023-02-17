@@ -28,23 +28,19 @@ function numberOfCharacters(string) {
       for (let i = 0; i < props.length; i++) {
          objeto[props[i]] = valoresPropiedades[i];
       }
-      console.log(objeto);
       return objeto;
    }
 
    function arregloPropidades(arreglo) {
       var propiedades = arreglo.filter((x, i) => arreglo.indexOf(x) === i);
-      console.log(propiedades);
       return propiedades;
    }
 
    function arreglosValoresNoRepetidos(arreglo) {
       var valoresNoRep = [];
       var repeticiones = 0;
-      for(i=0; i<arreglo.length; i++){
-         
-         for(j=i; j<arreglo.length; j++){
-               
+      for(i=0; i<arreglo.length; i++){  
+         for(j=i; j<arreglo.length; j++){   
             if (arreglo[i] === arreglo[j]) {
                repeticiones++;
             }    
@@ -52,10 +48,7 @@ function numberOfCharacters(string) {
          i = i + repeticiones - 1;
          valoresNoRep.push(repeticiones);
          repeticiones = 0;
-         console.log(valoresNoRep);
-         
       }
-      console.log(valoresNoRep);
       return valoresNoRep;
    }
       
@@ -63,9 +56,6 @@ function numberOfCharacters(string) {
    }
    
    
-
-
-
 function capToFront(string) {
    // Recibes un string con algunas letras en mayúscula y otras en minúscula.
    // Debes enviar todas las letras en mayúscula al comienzo del string.
