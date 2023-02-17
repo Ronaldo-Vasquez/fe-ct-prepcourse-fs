@@ -55,13 +55,35 @@ function numberOfCharacters(string) {
    return crearObjetoX(propidades, valoresPropiedades);
    }
    
-   
+
 function capToFront(string) {
    // Recibes un string con algunas letras en mayúscula y otras en minúscula.
    // Debes enviar todas las letras en mayúscula al comienzo del string.
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
+   var strMayusculas = [];
+   strMayusculas = string.split("");
+   var newArrMayusculas = [];
+   var newArrMinusculas = [];
+
+   function esMayus(values){
+      if(values === values.toUpperCase()){
+         return values;
+      }
+   }
+
+   function esMinus(values){
+      if(values === values.toLowerCase()){
+         return values;
+      }
+   }
+
+   newArrMayusculas = strMayusculas.filter(element => esMayus(element));
+   newArrMinusculas = strMayusculas.filter(element => esMinus(element));
+
+   return newArrMayusculas.join("")+""+newArrMinusculas.join("");
+   
 }
 
 function asAmirror(frase) {
@@ -69,6 +91,33 @@ function asAmirror(frase) {
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
+   var arrPalabras = [];
+   var frasePInversas = [];
+   arrPalabras = frase.split(" ");
+
+   function invertir(value){
+      console.log(value+" Valor entrada");
+      
+      valorIs = [];
+      valorIu = [];
+      
+
+      valorIs = value.split(" ");
+      console.log(valorIs+"valor separado");
+
+      valorIu = valorIs.reverse();
+      console.log(valorIu+" valor reverso");
+
+      return valorIu.join("");
+   }
+   
+
+   frasePInversas = invertir(arrPalabras.join(" "));
+
+   
+   console.log(arrPalabras);
+   console.log(frasePInversas);
+   return(frasePInversas)
 }
 
 function capicua(numero) {
